@@ -23,7 +23,15 @@ div.nav-wrapper {
 }
 
 
-nav ul a {
+nav ul  {
   margin: 20px;
+  font-size: 25px;
+}
+
+nav ul a {
+  font-size: 25px;
+}
+
+.nav-wrapper {
   font-size: 25px;
 }

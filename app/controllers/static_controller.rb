@@ -10,12 +10,10 @@ class StaticController < ApplicationController
       config.consumer_secret     = ""
       config.access_token        = ""
       config.access_token_secret = ""
+    end
   end
 
-
-    # @http = "#{tweet.user.screen_name}: #{tweet.text}"
-    #
-    # p @http.scheme
+  def show
 
   end
 end

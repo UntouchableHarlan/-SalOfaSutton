@@ -7,7 +7,7 @@
 
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
@@ -19,10 +19,11 @@
   <nav class="nav-bar">
     <div class="navbar-fixed">
         <div class="nav-wrapper">
-          <a href="#!" class="brand-logo">Logo</a>
+            <%= link_to "#TagLine", root_path%>
           <ul class="right hide-on-med-and-down">
               <% if current_user %>
             <li>
+              Hi, <%= current_user.name %>
               <%= link_to 'Logout', logout_path %>
             </li>
             <% else %>
@@ -38,6 +39,9 @@
       </nav>
     </div>
   </nav>
+
+  <!--------------------------------------------->
+
 
   <%= yield %>
 </body>
