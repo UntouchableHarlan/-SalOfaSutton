@@ -1,0 +1,13 @@
+
+
+
+<% @client.search("##{params[:q]} -rt", result_type: "recent").take(12).collect do |tweet| %>
+
+<p>
+   <a href="https://twitter.com/<%= "#{tweet.user.screen_name}" %>" target="_blank"><strong> <%= "@#{tweet.user.screen_name}:" %></strong></a>
+   <%= tweet.text %>
+</p>
+  <% tweet.media.each do | media |  %>
+    <p> <%= image_tag(media.media_url_https.to_s) %> </p>
+  <% end %>
+<% end %>

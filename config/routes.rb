@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
+  post '/tweet' => 'static#tweet'
+
   root 'static#index'
 
   resources :users
