@@ -8,7 +8,7 @@ class TwitterFeeds
       end
   end
 
-  def tweet(message)
+  def tweet
     @client.search("to:justinbieber marry me", result_type: "recent").take(3).collect do |tweet|
   "#{tweet.user.screen_name}: #{tweet.text}"
 end

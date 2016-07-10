@@ -7,7 +7,7 @@
   <%= link_to 'Register', new_user_path %>
 <% end %> -->
 
- <%= form_tag("/tweet") do %>
+ <%= form_tag("/tweet",class: 'main-form') do %>
  <p class="search">
   <%= label_tag(:q, "Find Trending Topics") %>
   <%= text_field_tag :q, nil, class: "form-control", placeholder:"Let your mind run wild..." %>

@@ -6,8 +6,11 @@ class StaticController < ApplicationController
 
   def tweet
     @client = Twitter::REST::Client.new do |config|
-        
-      end
+      config.consumer_key        = ""
+      config.consumer_secret     = ""
+      config.access_token        = ""
+      config.access_token_secret = ""
+  end
 
 
     # @http = "#{tweet.user.screen_name}: #{tweet.text}"

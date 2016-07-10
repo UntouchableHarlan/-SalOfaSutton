@@ -14,4 +14,16 @@
  *= require_self
 
 
- */
+
+*/
+
+div.nav-wrapper {
+  /*top: 0;*/
+  /*left: 0;*/
+}
+
+
+nav ul a {
+  margin: 20px;
+  font-size: 25px;
+}
