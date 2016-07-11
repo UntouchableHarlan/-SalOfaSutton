@@ -13,9 +13,11 @@ class StaticController < ApplicationController
       config.access_token_secret = ""
     end
     @tracks = RSpotify::Track.search(params[:q], limit: 1)
-  end
 
-  def song
+    Giphy::Configuration.configure do |config|
+      config.api_key = "dc6zaTOxFJmzC"
+    end
 
+    @picture = Giphy.search("#{params[:q]}", {limit: 1})
   end
 end
