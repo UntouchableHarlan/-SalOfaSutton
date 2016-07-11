@@ -1,6 +1,8 @@
 body {
-  // background-color: purple;
-  // color: yellow;
+  background-repeat: no-repeat;
+  background: #780206; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #780206 , #061161); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #780206 , #061161); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;

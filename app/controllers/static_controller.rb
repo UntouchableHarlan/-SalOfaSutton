@@ -1,7 +1,9 @@
 require 'uri'
 require 'rspotify'
 class StaticController < ApplicationController
+
   def index
+    @random = Giphy.trending(limit: 12)
     # redirect_to new_user_path if session[:user_id].nil?
   end
 
@@ -15,7 +17,7 @@ class StaticController < ApplicationController
     @tracks = RSpotify::Track.search(params[:q], limit: 1)
 
     Giphy::Configuration.configure do |config|
-      config.api_key = "dc6zaTOxFJmzC"
+      config.api_key = ""
     end
 
     @picture = Giphy.search("#{params[:q]}", {limit: 1})

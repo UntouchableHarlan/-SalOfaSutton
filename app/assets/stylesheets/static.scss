@@ -1,7 +1,24 @@
 // Place all the styles related to the static controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-h1  {
+
+
+
+
+// body{
+//   background-repeat: no-repeat;
+// }
+
+
+.main-page{
+  position: static;
+	padding-top: 15%;
+  padding-bottom: 15%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.something{
   text-align: center;
 }
 
@@ -13,8 +30,27 @@ h1  {
   text-align: center;
 }
 
-
-
 #some i {
   font-size: 94px;
 }
+
+.btn-primary{
+  background-color: black;
+}
+
+.btn-primary:hover{
+  background-color: silver;
+}
+
+.tweet{
+  font-size: 18px;
+  color: white;
+}
+
+
+
+
+
+// .tweet-container{
+//   background-color: silver;
+// }
