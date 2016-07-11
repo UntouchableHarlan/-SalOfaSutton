@@ -1,4 +1,5 @@
 require 'uri'
+require 'rspotify'
 class StaticController < ApplicationController
   def index
     # redirect_to new_user_path if session[:user_id].nil?
@@ -11,9 +12,10 @@ class StaticController < ApplicationController
       config.access_token        = ""
       config.access_token_secret = ""
     end
+    @tracks = RSpotify::Track.search(params[:q], limit: 1)
   end
 
-  def show
+  def song
 
   end
 end

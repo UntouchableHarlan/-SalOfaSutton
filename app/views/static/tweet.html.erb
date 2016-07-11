@@ -1,21 +1,7 @@
 <!--Search Bar-->
-<%= form_tag("/tweet", class: 'main-form') do %>
-<p class="search">
- <%= label_tag(:q, "Find Trending Topics") %>
- <%= text_field_tag :q, nil, class: "form-control", placeholder:"Let your mind run wild..." %>
- <%= submit_tag "Search", class: "btn btn-primary" %>
- <% end %>
-</p>
+<%= render 'form'  %>
 
-<% @client.search("##{params[:q]} -rt", result_type: "recent").take(12).collect do |tweet| %>
-<%#= tweet.inspect%>
-
-
-  <% keyword = tweet.text.split %>
-    <% if keyword.include? params[:q] %>
-    <%= params[:q] %>
-    <% end %>
-
+<% @client.search("##{params[:q]} -rt", result_type: "recent").take(1).collect do |tweet| %>
 
 <!---Tweet Content--->
 <div class="row">
@@ -35,3 +21,15 @@
   </div>
 </div>
 <% end %>
+
+
+
+
+<div class="container">
+
+
+ <audio controls autoplay>
+]   <source src="<%=@tracks.first.preview_url if @tracks.first%>" type="audio/mpeg">
+ </audio>
+
+</div>
