@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
 
   post '/tweet' => 'static#tweet'
+  get '/tweet' => 'static#index'
 
   root 'static#index'
 
