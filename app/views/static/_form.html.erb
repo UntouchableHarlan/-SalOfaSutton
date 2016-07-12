@@ -1,5 +1,9 @@
 <%= form_tag("/tweet", class: 'main-form') do %>
 
+<div class="logo">
+  <i class="fa fa-hashtag fa-lg" aria-hidden="true"></i>ashMash
+</div>
+
 <div class="container">
   <p class="search">
     <%= label_tag(:q, "(Enter in your favorite topic and turn up your volume!)") %>
@@ -8,5 +12,3 @@
     <% end %>
   </p>
 </div>
-
-  
