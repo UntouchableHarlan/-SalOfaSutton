@@ -1,6 +1,6 @@
-require 'uri'
-require 'rspotify'
 class StaticController < ApplicationController
+  require 'uri'
+  require 'rspotify'
 
   def index
     @random = Giphy.trending(limit: 12)
@@ -8,18 +8,25 @@ class StaticController < ApplicationController
   end
 
   def tweet
-    @client = Twitter::REST::Client.new do |config|
-      config.consumer_key        = ""
-      config.consumer_secret     = ""
-      config.access_token        = ""
-      config.access_token_secret = ""
-    end
-    @tracks = RSpotify::Track.search(params[:q], limit: 1)
+    if params[:q] == ""
+      redirect_to root_path
+    else
+      @client = Twitter::REST::Client.new do |config|
+        config.consumer_key        = ""
+        config.consumer_secret     = ""
+        config.access_token        = ""
+        config.access_token_secret = ""
+      end
+      # @tracks = RSpotify::Track.search(params[:q], limit: 1)
+      @tracks = RSpotify::Track.search(params[:q], limit: rand(5..20))
+      @specific_track = RSpotify::Track.search(params[:q], limit: 1).first
 
-    Giphy::Configuration.configure do |config|
-      config.api_key = ""
+      Giphy::Configuration.configure do |config|
+        config.api_key = "dc6zaTOxFJmzC"
+      end
+
+      @picture = Giphy.search("#{params[:q]}", {limit: rand(1..10)})
     end
 
-    @picture = Giphy.search("#{params[:q]}", {limit: 1})
   end
 end

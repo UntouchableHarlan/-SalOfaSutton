@@ -12,10 +12,7 @@
 
 .main-page{
   position: static;
-	padding-top: 15%;
-  padding-bottom: 15%;
-  padding-left: 10%;
-  padding-right: 10%;
+	padding-top: 5%;
 }
 
 .something{
@@ -24,6 +21,7 @@
 
 .search{
   text-align: center;
+  color: white;
 }
 
 .row {
@@ -47,6 +45,9 @@
   color: white;
 }
 
+.error-message {
+  color: white;
+}
 
 
 

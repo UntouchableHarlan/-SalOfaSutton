@@ -3,6 +3,7 @@
 
 <% @client.search("##{params[:q]} -rt", result_type: "recent").take(1).collect do |tweet| %>
 
+
 <!---Tweet Content--->
 <div class="container tweet-container">
   <div class="row">
@@ -21,19 +22,29 @@
       <% end %>
       </div>
     </div>
-  <% end %>
+<% end %>
       <div class="col s12 m6">
         <div class="center promo promo-example">
           <audio controls autoplay>
-            <source src="<%=@tracks.first.preview_url if @tracks.first %>" type="audio/mpeg">
+            <% if !@tracks.empty? %>
+              <source src="<%=@tracks.third_to_last.preview_url %>" type="audio/mpeg">
+            <% else %>
+              <source src="<%= RSpotify::Track.search("My Boo", limit: 1).first.preview_url %>" type="audio/mpeg">
+            <% end %>
           </audio>
           <div class="container">
-            <iframe src="<%= @picture.first.embed_url.to_s if @picture.first %>" width="" height=""></iframe>
+            <% if !@picture.empty? %>
+              <iframe src="<%= @picture.second_to_last.embed_url.to_s %>" width="" height=""></iframe>
+            <% else %>
+              <iframe src="<%= Giphy.search("troll", {limit: 9}).third_to_last.embed_url.to_s %>" width="" height=""></iframe>
+            <h1 class="error-message">You can do better than that!</h1>
+            <% end %>
           </div>
         </div>
       </div>
   </div>
 </div>
+
 
 
 

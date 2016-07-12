@@ -16,25 +16,8 @@
 
 
 */
-.nav-bar{
-  background-color: #74777c;
-}
 
-div.nav-wrapper {
-  /*top: 0;*/
-  /*left: 0;*/
-}
-
-
-nav ul  {
-  margin: 20px;
-  font-size: 25px;
-}
-
-nav ul a {
-  font-size: 25px;
-}
-
-.nav-wrapper {
-  font-size: 25px;
+.fa-home{
+  font-size: 45px;
+  color: white;
 }
