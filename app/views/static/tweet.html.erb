@@ -1,4 +1,3 @@
-<!--Search Bar-->
 <%= render 'form'  %>
 
 <% @client.search("##{params[:q]} -rt", result_type: "recent").take(1).collect do |tweet| %>
@@ -27,14 +26,14 @@
         <div class="center promo promo-example">
           <audio controls autoplay>
             <% if !@tracks.empty? %>
-              <source src="<%=@tracks.third_to_last.preview_url %>" type="audio/mpeg">
+              <source src="<%=@tracks.sample.preview_url %>" type="audio/mpeg">
             <% else %>
               <source src="<%= RSpotify::Track.search("My Boo", limit: 1).first.preview_url %>" type="audio/mpeg">
             <% end %>
           </audio>
           <div class="container">
             <% if !@picture.empty? %>
-              <iframe src="<%= @picture.second_to_last.embed_url.to_s %>" width="" height=""></iframe>
+              <iframe src="<%= @picture.sample.embed_url.to_s %>" width="" height=""></iframe>
             <% else %>
               <iframe src="<%= Giphy.search("troll", {limit: 9}).third_to_last.embed_url.to_s %>" width="" height=""></iframe>
             <h1 class="error-message">You can do better than that!</h1>
@@ -44,16 +43,3 @@
       </div>
   </div>
 </div>
-
-
-
-
-
-<!-- <div class="container">
-
-
- <audio controls autoplay>
-   <source src="<%=@tracks.first.preview_url if @tracks.first %>" type="audio/mpeg">
- </audio>
-
-</div> -->

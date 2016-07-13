@@ -12,13 +12,13 @@ class StaticController < ApplicationController
       redirect_to root_path
     else
       @client = Twitter::REST::Client.new do |config|
-        config.consumer_key        = ENV['CONSUMER_KEY']
-        config.consumer_secret     = ENV['CONSUMER_SECRET']
-        config.access_token        = ENV['ACCESS_TOKEN']
-        config.access_token_secret = ENV['ACCESS_TOKEN_SECRET']
+        config.consumer_key        = ""
+        config.consumer_secret     = ""
+        config.access_token        = ""
+        config.access_token_secret = ""
       end
       # @tracks = RSpotify::Track.search(params[:q], limit: 1)
-      @tracks = RSpotify::Track.search(params[:q], limit: rand(5..20))
+      @tracks = RSpotify::Track.search(params[:q], limit: rand(1..10))
       @specific_track = RSpotify::Track.search(params[:q], limit: 1).first
 
       Giphy::Configuration.configure do |config|
