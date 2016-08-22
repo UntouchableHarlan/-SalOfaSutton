@@ -144,6 +144,7 @@ GEM
       omniauth (~> 1.2)
     omniauth-spotify (0.0.9)
       omniauth-oauth2 (~> 1.1)
+    pg (0.18.4)
     pkg-config (1.1.7)
     puma (3.4.0)
     rack (2.0.1)
@@ -267,6 +268,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   omniauth-spotify
+  pg
   puma (~> 3.0)
   rails (~> 5.0.0)
   rspec-rails

@@ -8,14 +8,14 @@ class StaticController < ApplicationController
   end
 
   def tweet
-    if params[:q] == ""
+    if params[:q] == "" || params[:q].match(" ")
       redirect_to root_path
     else
       @client = Twitter::REST::Client.new do |config|
-        config.consumer_key        = ""
-        config.consumer_secret     = ""
-        config.access_token        = ""
-        config.access_token_secret = ""
+        config.consumer_key        = "062IXtPo0LP9RPHSqSdyAC5wY"
+        config.consumer_secret     = "tPw49Lbe8zhguvNS8WZK5fAPGO9AlJ3wtNX6Uhn87eYYU3YjqR"
+        config.access_token        = "582516066-BJcbKpMsRrlfLux2fGedUSbqQTIBn5E1D37ouLwL"
+        config.access_token_secret = "uCc7VRBzRT4ZUm5kLZwpXwtnHBeB0EVC8vccIO4sjLnJ2"
       end
       # @tracks = RSpotify::Track.search(params[:q], limit: 1)
       @tracks = RSpotify::Track.search(params[:q], limit: rand(1..10))
