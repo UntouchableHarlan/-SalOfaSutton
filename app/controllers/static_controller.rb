@@ -12,10 +12,10 @@ class StaticController < ApplicationController
       redirect_to root_path
     else
       @client = Twitter::REST::Client.new do |config|
-        config.consumer_key        = "062IXtPo0LP9RPHSqSdyAC5wY"
-        config.consumer_secret     = "tPw49Lbe8zhguvNS8WZK5fAPGO9AlJ3wtNX6Uhn87eYYU3YjqR"
-        config.access_token        = "582516066-BJcbKpMsRrlfLux2fGedUSbqQTIBn5E1D37ouLwL"
-        config.access_token_secret = "uCc7VRBzRT4ZUm5kLZwpXwtnHBeB0EVC8vccIO4sjLnJ2"
+        config.consumer_key        = ENV["CONSUMER_KEY"]
+        config.consumer_secret     = ENV["CONSUMER_SECRET"]
+        config.access_token        = ENV["ACCESS_TOKEN"]
+        config.access_token_secret = ENV["ACCESS_TOKEN_SECRET"]
       end
       # @tracks = RSpotify::Track.search(params[:q], limit: 1)
       @tracks = RSpotify::Track.search(params[:q], limit: rand(1..10))
